@@ -2,10 +2,6 @@ import serviceWeb from "@/assets/service-web.jpg.asset.json";
 import serviceMobile from "@/assets/service-mobile.jpg.asset.json";
 import serviceUx from "@/assets/service-ux.jpg.asset.json";
 import serviceCloud from "@/assets/service-cloud.jpg.asset.json";
-import courseFullstack from "@/assets/course-fullstack.jpg.asset.json";
-import courseUx from "@/assets/course-ux.jpg.asset.json";
-import courseAi from "@/assets/course-ai.jpg.asset.json";
-import courseDevops from "@/assets/course-devops.jpg.asset.json";
 import productFlowdesk from "@/assets/product-flowdesk.jpg.asset.json";
 import productPulseboard from "@/assets/product-pulseboard.jpg.asset.json";
 import productCartsuite from "@/assets/product-cartsuite.jpg.asset.json";
@@ -20,12 +16,33 @@ export const services: CatalogItem[] = [
   { title: "Cloud, Data & AI", text: "Infrastructure, automation and applied intelligence designed around measurable value.", image: serviceCloud.url, alt: "Cloud infrastructure and artificial intelligence visualization" },
 ];
 
-export const courses: CatalogItem[] = [
-  { title: "Full Stack Development", text: "A 12-week foundation in modern interfaces, APIs, databases and deployment.", image: courseFullstack.url, alt: "Full stack developer working across multiple screens" },
-  { title: "UI/UX Design", text: "An 8-week path through research, Figma, systems thinking and prototyping.", image: courseUx.url, alt: "Designer developing mobile interface wireframes" },
-  { title: "Data Science & AI", text: "A 14-week applied program covering Python, machine learning and real datasets.", image: courseAi.url, alt: "Artificial intelligence network surrounded by data displays" },
-  { title: "Cloud & DevOps", text: "A 10-week program covering cloud foundations, containers and delivery pipelines.", image: courseDevops.url, alt: "Cloud deployment pipeline in a server environment" },
+export type ContentItem = { title: string; text: string };
+
+export const stats: [string, string][] = [
+  ["120+", "Projects"], ["40+", "Clients"], ["98%", "Retention"], ["6 yrs", "Building"],
 ];
+
+export const projects: ContentItem[] = [
+  { title: "NeoBank Dashboard", text: "A unified finance workspace serving payments, statements and fraud signals at scale." },
+  { title: "CarePath", text: "A patient and clinic platform connecting appointments, records and care journeys." },
+  { title: "StoreFront OS", text: "A headless commerce system unifying inventory, checkout and fulfilment." },
+  { title: "RouteSense", text: "Live fleet visibility and route optimization for a growing logistics operator." },
+];
+
+export const advantages: ContentItem[] = [
+  { title: "Dedicated Pods", text: "The same focused team stays close to your product from kickoff to delivery." },
+  { title: "Visible Progress", text: "Shared plans, regular demos and direct access keep every decision transparent." },
+  { title: "Designed to Scale", text: "Architecture choices account for the next stage—not only the first release." },
+  { title: "Long-term Support", text: "Monitoring, iteration and technical guidance continue as your product grows." },
+];
+
+export const posts: ContentItem[] = [
+  { title: "Why we chose edge-first rendering", text: "The performance, reliability and delivery trade-offs behind a major platform decision." },
+  { title: "Dashboards people actually check", text: "How hierarchy and restraint turn data-heavy interfaces into daily tools." },
+  { title: "What we look for in new engineers", text: "The habits, curiosity and evidence of craft that stand out beyond a résumé." },
+  { title: "Scaling without losing clarity", text: "Simple operating patterns for keeping product and engineering aligned as teams grow." },
+];
+
 
 export const products: CatalogItem[] = [
   { title: "FlowDesk", text: "A clear, lightweight project and task workspace for focused engineering teams.", image: productFlowdesk.url, alt: "FlowDesk project management workspace" },

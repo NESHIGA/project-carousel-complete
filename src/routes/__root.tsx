@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Tevexxo" },
-      { name: "description", content: "Software, products and practical technology training by Tevexxo." },
+      { name: "description", content: "Software engineering and digital products by Tevexxo." },
       { name: "author", content: "Tevexxo" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

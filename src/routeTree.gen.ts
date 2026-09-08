@@ -13,9 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as ProductsRouteImport } from './routes/products'
-import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WhyUsRouteImport } from './routes/why-us'
@@ -40,19 +38,9 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CoursesRoute = CoursesRouteImport.update({
-  id: '/courses',
-  path: '/courses',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgramsRoute = ProgramsRouteImport.update({
-  id: '/programs',
-  path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -76,9 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
   '/products': typeof ProductsRoute
-  '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -88,9 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
   '/products': typeof ProductsRoute
-  '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -101,9 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
   '/products': typeof ProductsRoute
-  '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -115,9 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blogs'
     | '/contact'
-    | '/courses'
     | '/products'
-    | '/programs'
     | '/projects'
     | '/services'
     | '/why-us'
@@ -127,9 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blogs'
     | '/contact'
-    | '/courses'
     | '/products'
-    | '/programs'
     | '/projects'
     | '/services'
     | '/why-us'
@@ -139,9 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blogs'
     | '/contact'
-    | '/courses'
     | '/products'
-    | '/programs'
     | '/projects'
     | '/services'
     | '/why-us'
@@ -152,9 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogsRoute: typeof BlogsRoute
   ContactRoute: typeof ContactRoute
-  CoursesRoute: typeof CoursesRoute
   ProductsRoute: typeof ProductsRoute
-  ProgramsRoute: typeof ProgramsRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   WhyUsRoute: typeof WhyUsRoute
@@ -190,25 +164,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/courses': {
-      id: '/courses'
-      path: '/courses'
-      fullPath: '/courses'
-      preLoaderRoute: typeof CoursesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/products': {
       id: '/products'
       path: '/products'
       fullPath: '/products'
       preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programs': {
-      id: '/programs'
-      path: '/programs'
-      fullPath: '/programs'
-      preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -240,9 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogsRoute: BlogsRoute,
   ContactRoute: ContactRoute,
-  CoursesRoute: CoursesRoute,
   ProductsRoute: ProductsRoute,
-  ProgramsRoute: ProgramsRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   WhyUsRoute: WhyUsRoute,
