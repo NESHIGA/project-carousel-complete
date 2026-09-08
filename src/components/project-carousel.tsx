@@ -12,6 +12,7 @@ export function ProjectCarousel({ items }: { items: CarouselItem[] }) {
   const [paused, setPaused] = useState(false);
   const touchStart = useRef<number | null>(null);
   const timer = useRef<number | null>(null);
+  const pausedRef = useRef(false);
 
   const clearTimer = useCallback(() => {
     if (timer.current !== null) { window.clearInterval(timer.current); timer.current = null; }
@@ -19,9 +20,14 @@ export function ProjectCarousel({ items }: { items: CarouselItem[] }) {
 
   const startTimer = useCallback(() => {
     clearTimer();
-    if (items.length < 2) return;
+    if (items.length < 2 || pausedRef.current) return;
     timer.current = window.setInterval(() => setActive((p) => (p + 1) % items.length), AUTOPLAY_MS);
   }, [clearTimer, items.length]);
+
+  const setPausedState = useCallback((value: boolean) => {
+    pausedRef.current = value;
+    setPaused(value);
+  }, []);
 
   const go = useCallback((i: number) => {
     setActive(((i % items.length) + items.length) % items.length);
