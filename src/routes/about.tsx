@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CatalogGrid } from "@/components/catalog-grid";
 import { CursorGrid } from "@/components/cursor-grid";
 import { Reveal } from "@/components/reveal";
-import { services } from "@/lib/catalog";
+import { services, stats } from "@/lib/catalog";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 import aboutInnovation from "@/assets/about-innovation.jpg";
@@ -63,9 +63,9 @@ function About() {
             <p className="section-tag">Who we are</p>
             <h2 className="font-display mt-4 text-4xl font-bold sm:text-5xl">Builders who stay for the hard part.</h2>
             <p className="mt-5 leading-8 text-muted-foreground">Tevexxo started as a small group of engineers and designers who wanted to work differently: fewer handovers, more ownership, and honest conversations about trade-offs.</p>
-            <p className="mt-4 leading-8 text-muted-foreground">Today the studio, the academy and the product lab share one team and one standard — clear thinking, tight feedback loops and software that earns its place in daily work.</p>
+            <p className="mt-4 leading-8 text-muted-foreground">Today the studio and the product lab share one team and one standard — clear thinking, tight feedback loops and software that earns its place in daily work.</p>
             <div className="mt-9 grid grid-cols-2 gap-8 border-t border-border pt-7 sm:grid-cols-4">
-              {[["120+","Projects"],["40+","Clients"],["3,500+","Learners"],["6 yrs","Building"]].map(([number, label]) => (
+              {stats.map(([number, label]) => (
                 <div key={label}><strong className="font-display text-2xl">{number}</strong><p className="mt-1 text-xs text-muted-foreground">{label}</p></div>
               ))}
             </div>
@@ -94,7 +94,7 @@ function About() {
         <div className="grid gap-6 md:grid-cols-2">
           {[
             { icon: Target, tag: "Our mission", title: "Make good technology ordinary.", text: "We build systems that remove friction for the people using them every day, and we measure success by the work they make easier — not by the size of the stack." },
-            { icon: Compass, tag: "Our vision", title: "A generation that builds better.", text: "A future where teams anywhere can ship reliable, thoughtful software, supported by engineers we help train and tools we design in the open." },
+            { icon: Compass, tag: "Our vision", title: "A generation that builds better.", text: "A future where teams anywhere can ship reliable, thoughtful software, supported by tools and systems we design in the open." },
           ].map(({ icon: Icon, tag, title, text }) => (
             <Reveal key={tag}>
               <article className="depth-card glass-panel h-full rounded-lg border border-border p-8 lg:p-10">
